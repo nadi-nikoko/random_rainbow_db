@@ -1,0 +1,46 @@
+#### CREATE DATABASE
+
+CREATE DATABASE IF NOT EXISTS video_directory;
+USE video_directory;
+
+### ADD TABLE
+
+CREATE TABLE `video` (
+ `id` INT AUTO_INCREMENT PRIMARY KEY,
+ `id_artist` INT NOT NULL,
+ `title` VARCHAR(255) NOT NULL,
+ `video_description` TEXT,
+ `video_link` VARCHAR(255) NOT NULL,
+ `duration` INT NOT NULL,
+ `checked` BOOLEAN NOT NULL,
+ `approved` BOOLEAN NOT NULL
+);
+
+### ADD DATA TO TABLE
+
+INSERT INTO `videos` (`id_artist`, `title`, `video_description`, `video_link`, `duration`, `checked`, `approved`)
+VALUES
+ (1, 'Video Title 1', 'This is a description for video 1.', 'https://example.com/video1', 120, 1, 1),
+ (2, 'Video Title 2', 'This is a description for video 2.', 'https://example.com/video2', 150, 0, 0),
+ (3, 'Video Title 3', 'This is a description for video 3.', 'https://example.com/video3', 200, 1, 1),
+ (4, 'Video Title 4', 'This is a description for video 4.', 'https://example.com/video4', 180, 0, 1),
+ (5, 'Video Title 5', 'This is a description for video 5.', 'https://example.com/video5', 220, 1, 0);
+
+# ADD TABLE
+
+CREATE TABLE `artists` (
+    `id` VARCHAR(255) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `pronouns` VARCHAR(255),
+    `socialMedia` VARCHAR(255),
+    `email` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+# ADD DATA TABLE
+
+INSERT INTO `artists` (`id`, `name`, `pronouns`, `socialMedia`, `email`)
+VALUES
+('artist1', 'Giggles Da Vinci', 'They/Them', 'https://twitter.com/gigglesdavinci', 'gigglesdavinci@example.com'),
+('artist2', 'Loony Leonardo', 'He/Him', 'https://instagram.com/loonyleonardo', 'loonyleonardo@example.com'),
+('artist3', 'Zany Zerbe', 'She/Her', 'https://facebook.com/zanyzerbe', 'zanyzerbe@example.com');
